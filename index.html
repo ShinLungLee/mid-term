@@ -6,27 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/Normalize.css"> 
     <link rel="stylesheet" href="css/style.css">  
+    <script src="js/jQuery 3.6.1.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <title>Gang Start : 異世界極道傳說</title>
+    <title>Gang Start : 異世界極道傳說ㅣ官方網站</title>
 </head>
 
-<body onmousedown="return false" onselectstart="return false" oncontextmenu="return false">
+<body onselectstart="return false" oncontextmenu="return false"> <!-- onmousedown="return false"--> 
      <!--header-->
     <div class="headerContainer">
         <header class="header">
-            <img src="img/headerIcon.png" class="headerIcon">
-            <img src="img/logo.png" class="logo">
+            <a href="#top"><img src="img/headerIcon.png" class="headerIcon" onmousedown="return false">
+            </a>
+            <img src="img/logo.png" class="logo" onmousedown="return false">
             <button class="dropMenuBtn">
                 <span class="dropMenuLine"></span>
                 <span class="dropMenuLine"></span>
                 <span class="dropMenuLine"></span>
-               
             </button>
+
             <div class="panel">
-                   <a href="index.html" class="pages">Intro</a>
-                   <a href="introduction.html" class="pages">About</a>
-                   <a href="login.html" class="pages">Dev.</a>
-                </div>
+
+                <a href="introduction.html" class="pages">About</a>
+                <a href="login.html" class="pages">Login</a>
+             </div>
         </header>
     </div>
 
@@ -47,15 +49,14 @@
     </div>
     
     <!--line-->
-    <div class="line"></div>                   
+        <div class="line"></div>                   
 
-        <!--aside-->
-
+    <!--aside-->
         <div class="asideContainer">
             <aside class="aside">
-                <img src="img/asideArt1.jpg" class="asideArt">
+                <img src="img/asideArt1.jpg" class="asideArtA" onmousedown="return false">
     
-                <div class="asideTextArea">
+                <div class="asideTextAreaA">
                     <h1 class="asideTitle">佛心遊戲</h1>
                     <p class="asideText">
                         歡樂爽快又益智：翻牌消除！<br>
@@ -68,9 +69,9 @@
     <!--aside2-->
          <div class="asideContainer">
             <aside class="aside">
-                <img src="img/asideArt2.jpg" class="asideArt">
+                <img src="img/asideArt2.jpg" class="asideArtB" onmousedown="return false">
         
-                <div class="asideTextArea">
+                <div class="asideTextAreaB">
                     <h1 class="asideTitle">流暢體驗</h1>
                     <p class="asideText">
                             沒有強迫廣告和海量彈出視窗！<br>
@@ -83,7 +84,7 @@
 <!--footer-->
 <div class="footerContainer">
     <footer class="footer">
-        <div class="footerIconList">
+        <div class="footerIconList" onmousedown="return false" >
             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"><img src="img/FB.png" alt="FB" class="footerIcon"></a>
             <a href="https://www.youtube.com/watch?v=vKB2Lg-IM3I&ab_channel=nactually"><img src="img/IG.png" alt="IG" class="footerIcon"></a>
             <a href="https://www.youtube.com/watch?v=F0csAzB7Ss8&list=PLLP0dSZSKJPycPCwXHtnv8YciST5TcpmB&index=92&ab_channel=HermitGarcia "><img src="img/YT.png" alt="YT" class="footerIcon"></a>
@@ -94,7 +95,8 @@
 </div>
     
 <a href="#top"><button type="button" class="goTopBtn">TOP</button></a>
-        <script src="/js/script.js"></script>
+        <script src="js/script.js"></script>
         
+               
 </body>
 </html>
