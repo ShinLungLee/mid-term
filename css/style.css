@@ -4,10 +4,13 @@ html{
 
 /*headerStart*/
 .headerContainer{
+  z-index: 1;
   max-width: auto;
   background-color: #eff3cb;
   position: sticky;
   top: 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .header{
@@ -23,10 +26,10 @@ html{
 .logo{
   width: auto;
   height: 88px;
-  animation: scaleUp 3s;
+  animation: logoScaleUp 3s;
 }
 
-@keyframes scaleUp {
+@keyframes logoScaleUp {
   0% { scale: 0.1; }
 }
 
@@ -44,6 +47,7 @@ html{
   border: 3px solid #e8e8e8;
   border-radius: 10px;
 }
+
 .dropMenuLine{
   position: relative;
   width: 52px;
@@ -57,8 +61,8 @@ html{
   background-color: #151515;
   box-shadow: 0 0 100px rgb(255, 204, 110);
   cursor: pointer;
+  transition: 1s;
 }
-
 
 .panel{
   display: none;
@@ -66,16 +70,24 @@ html{
   height: auto;
   width: 96px;
   right: 20px;
-  top: 80px;
+  top: 88px;
   background-color:#eff3cb ;
   color:#020202;
   font-family:Arial Black;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 .pages{
-padding-left: 20px;
-background-color:#eff3cb ;
+  padding-left: 20px;
+  background-color:#eff3cb ;
+  font-family:Arial Black;
+  cursor: pointer;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 
 .pages:hover{
@@ -103,6 +115,7 @@ background-color:#eff3cb ;
   margin: 0 0 0 0 ;
   animation: fadeIn 3s;
   animation-timing-function: ease ;
+  z-index: -1;
 }
 
 @keyframes fadeIn {
@@ -153,13 +166,67 @@ background-color:#eff3cb ;
   margin: 0 0 0 0 ;
   width: 50%;
   height: 50%;
+  top: 0;
+}
+
+.asideArtA{
+  margin: 0 0 0 0 ;
+  width: 50%;
+  height: 50%;
+  top: 0;
+}
+
+.asideArtB{
+  margin: 0 0 0 0 ;
+  width: 50%;
+  height: 50%;
+  top: 0;
 }
 
 .asideArt:hover{
-  scale: 1.15;
+  position: relative;
+  transition: 1s;
+  scale: 1.1;
 }
 
+.asideArtA.scaleUp{
+  animation: scaleUp 0.5s;
+  animation-timing-function: ease ;
+  animation-fill-mode:forwards;
+}
+
+.asideArtA.scaleDown{
+  animation: scaleDown 0.5s;
+  animation-timing-function: ease ;
+  animation-fill-mode:forwards;
+
+}
+
+.asideArtB.scaleUp{
+  animation: scaleUp 0.5s;
+  animation-timing-function: ease ;
+  animation-fill-mode:forwards;
+}
+
+.asideArtB.scaleDown{
+  animation: scaleDown 0.5s;
+  animation-timing-function: ease ;
+  animation-fill-mode:forwards;
+}
+
+@keyframes scaleUp {
+  from { scale: 1; }
+  to { scale: 1.1; }
+}
+
+@keyframes scaleDown {
+  from { scale: 1.1; }
+  to { scale: 1; }
+}
+
+
 .asideTextArea{
+  z-index: -1;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -167,6 +234,35 @@ background-color:#eff3cb ;
   color:#e8e8e8;
   font-family:Arial Black;
   margin: 0 auto 0 auto;
+  animation: moveright 3s;
+}
+.asideTextAreaA{
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 640px;
+  color:#e8e8e8;
+  font-family:Arial Black;
+  margin: 0 auto 0 auto;
+  animation: moveright 3s;
+}
+
+.asideTextAreaB{
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 640px;
+  color:#e8e8e8;
+  font-family:Arial Black;
+  margin: 0 auto 0 auto;
+  animation: moveright 3s;
+}
+
+@keyframes moveright {
+  0% { padding-left: 200px; }
+  0% { opacity: 0; }
 }
 
 .asideTitle{
@@ -182,9 +278,9 @@ background-color:#eff3cb ;
 
 /*footerStart*/
 .footer{
-  margin: 64px  auto 0 auto;
+  position:relative;
+  margin: 64px auto 0 auto;
   height: 64px;
-  width: 100%;
   background-color:#eff3cb;
   display: flex;
   justify-content: space-evenly;
@@ -192,12 +288,9 @@ background-color:#eff3cb ;
   font-size: 12px;
   color:#000000;
   flex-direction: row;
-}
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 
-.footer p{
-  margin: auto auto auto auto;
-  display: flex;
-  justify-content: center;
 }
 
 .footerIconList{
@@ -210,7 +303,14 @@ background-color:#eff3cb ;
   max-width: 48px;
   max-height: 48px;
   padding-left: 24px;
+  top: 0;
+  transition: top 0.2s;
+}
+
+.footerIcon:hover{
   cursor: pointer;
+  top:-4px;
+  position: relative;
 }
 
 .copyRight{
@@ -238,12 +338,14 @@ background-color:#eff3cb ;
 
 /*goTop*/
 .goTopBtn {
+  display: none;
+  z-index: 1;
   position: fixed;
   top: 0;
   right:0;
   height: 48px;
   width: 48px;
-  margin-top: 88vh;
+  margin-top: 84vh;
   background-color: #eff3cb;
   opacity: 0.7;
   border: none;
@@ -261,6 +363,10 @@ background-color:#eff3cb ;
   opacity: 1;
   cursor: pointer;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
     /*gameprodce*/
 
   .Img-list{
@@ -269,20 +375,29 @@ background-color:#eff3cb ;
     justify-content:center;
 }
 
-    /*produceimg*/
+    /*introductionimg*/
   .smallArt{
     margin: 0 0 0 0 ;
     width: 12%;
     height: 12%;
   }
   /*login*/
+  .forget-main-content{
+    min-height: 75%;
+
+  }
+ .logblackbar{
+    width: 100%;
+    height: 50px;
+    background-color: #000000;
+ }
   .logcontainer{
     display:flex;
     max-width: 940px;
-    height: 75%;
+    height: 68%;
     margin-right: auto;
     margin-left: auto;
-    background-color: #c5db44;
+    background-color: #eff3cb;
     flex-direction: column;
 }
 
@@ -300,8 +415,7 @@ background-color:#eff3cb ;
   color:#778a50;
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-left: 22%;
-
+  padding-left: 26%;
   justify-content: center;
 }
 .rectangle{
@@ -313,14 +427,38 @@ left: 310px;
 background-color: rgb(255, 255, 255);
 justify-content: center;
 }
+
 .logblock{
-  flex-grow: 1; /*可佔滿垂直剩餘的空間*/
+  justify-content: center;
+}
+.container__overlay{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 46%;
+}
+.form {
+  padding-top: 5px;
+  padding-bottom: 50px;
+  height: 160px;
+  padding-left: 40%;
+}
+.button-display{
+  margin-bottom: auto;
+  margin-top: auto;
+  padding-left: 10px;
+  font-weight: bold;
+  list-style: none;
 }
 html,body{  
   height: 100%;
-  margin: 0;
 }
+
 .form{
-  margin-left: 360px;
+  display:none;
+  background-color: #778a50;
   justify-content: center;
 }
+a:link    {color:black;}
+a:visited {color:black;}
+a{text-decoration:none}
+a:hover{text-decoration:none}
